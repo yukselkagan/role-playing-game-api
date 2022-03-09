@@ -1,0 +1,19 @@
+﻿using RolePlayingGame.Entities.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RolePlayingGame.Data.Abstract
+{
+    public interface ICharacterRepository
+    {
+
+
+        public Character CreateCharacter(Character character);
+        public Character Find(int characterId);
+        public Character Update(Character character);
+
+    }
+}
