@@ -14,6 +14,7 @@ namespace RolePlayingGame.Business.Abstract
         public Character CreateCharacter(Character character);
         public Character Find(int characterId);
         public Character Update(Character character);
+        public Character LevelUpRegulation(Character character);
 
     }
 }

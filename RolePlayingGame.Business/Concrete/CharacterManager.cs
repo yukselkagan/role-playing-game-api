@@ -60,6 +60,37 @@ namespace RolePlayingGame.Business.Concrete
         }
 
 
+        public Character LevelUpRegulation(Character character)
+        {
+            while(character.Experience >= character.MaxExperience)
+            {
+                character.Experience -= character.MaxExperience;
+                character.CharacterLevel += 1;
+
+                character.Damage = (int)Math.Floor(character.Damage * 1.25);
+                character.MaxHealth = (int)Math.Floor(character.MaxHealth * 1.25);
+                character.Health = character.MaxHealth;
+
+                character.MaxExperience = (int)Math.Floor(character.MaxExperience * 1.50);
+
+            }
+            return character;
+        }
+
+
+        public Character UsePotion(Character character)
+        {
+            character.Health += 100;
+            if(character.Health > character.MaxHealth)
+            {
+                character.Health = character.MaxHealth;
+            }
+            return character;
+        }
+
+
+
+
 
 
 

@@ -61,6 +61,12 @@ namespace RolePlayingGame.Business.Concrete
                     string response = $"Mission successfull, {targetMission.GivenExperience} experience gained " +
                         $" {randomTakenDamage} damage taken";
 
+                    targetCharacter.Experience += targetMission.GivenExperience;
+                    targetCharacter.Health -= randomTakenDamage;
+
+                    targetCharacter = _characterService.LevelUpRegulation(targetCharacter);
+                    _characterService.Update(targetCharacter);
+
                     return response;
 
 
